@@ -1,9 +1,9 @@
 /* Developer configuration. Empty values keep unconnected services honest. */
 window.VOSIK_CONFIG = {
-  quoteEndpoint: '', // HTTPS endpoint accepting JSON. Add server-side validation and abuse protection.
-  bookingUrl: '',    // BOOKING URL TBD: approved meeting-scheduling URL for vosik.io. Empty keeps [data-booking] links on quote.html.
+  quoteEndpoint: '/api/leads', // Same-origin path proxied to app.vosik.io via Render static-site rewrite rule.
+  bookingUrl: 'https://calendly.com/vosik/30min',
   videoUrl: '',      // Approved MP4/WebM URL; see README for embedding a hosted player instead.
   videoCaptions: '', // Local VTT path for the approved video.
-  salesEmail: '',
-  salesPhone: ''
+  salesEmail: 'hunter@vosik.io',
+  salesPhone: '865.235.3534'
 };

@@ -43,7 +43,10 @@ if(form) {
     }
     const submit=form.querySelector('[type=submit]');submit.disabled=true;submit.textContent='Sending…';status.textContent='';
     try {
-      const response=await fetch(safeWebUrl(config.quoteEndpoint),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
+      const data=Object.fromEntries(new FormData(form));
+      const detail=[data.role&&`Role: ${data.role}`,data.spend&&`Annual spend: ${data.spend}`,data.challenge&&`Challenge: ${data.challenge}`].filter(Boolean).join(' · ');
+      const payload={fullName:data.name,email:data.email,company:data.company,message:detail||undefined,source:'website-quote'};
+      const response=await fetch(safeWebUrl(config.quoteEndpoint),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       if(!response.ok) throw new Error('Request was not accepted');
       status.textContent='Thank you. Your quote request has been received. Our sales team will contact you at the email address provided.';form.reset();
     } catch {status.textContent='Your request could not be sent. Please try again.';}
