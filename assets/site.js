@@ -53,3 +53,16 @@ if(form) {
     finally {submit.disabled=false;submit.textContent='Request My Quote';status.focus();}
   });
 }
+
+/* Click anywhere on a video to play/pause (Chrome/Edge only toggle via the control bar) */
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('video[controls]').forEach(function(v){
+    v.style.cursor='pointer';
+    v.addEventListener('click', function(e){
+      // ignore clicks on the native control strip (bottom ~48px)
+      var r=v.getBoundingClientRect();
+      if(e.clientY > r.bottom-48) return;
+      if(v.paused){ v.play(); } else { v.pause(); }
+    });
+  });
+});
