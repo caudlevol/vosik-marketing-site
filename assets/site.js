@@ -22,12 +22,12 @@ document.querySelectorAll('[data-stage-button]').forEach(button => button.addEve
 }));
 function safeWebUrl(value) { try { const u = new URL(value, location.href); return ['https:', 'http:'].includes(u.protocol) ? u.href : null; } catch { return null; } }
 if (config.bookingUrl && safeWebUrl(config.bookingUrl)) document.querySelectorAll('[data-booking]').forEach(a => a.href = safeWebUrl(config.bookingUrl));
-const videoSlot = document.querySelector('[data-video-slot]');
-if (videoSlot && config.videoUrl && safeWebUrl(config.videoUrl)) {
-  const video = document.createElement('video'); video.controls=true; video.preload='metadata'; video.style.width='100%'; video.setAttribute('aria-label','Vosik five-minute product demonstration'); video.src=safeWebUrl(config.videoUrl);
-  if(config.videoCaptions) {const track=document.createElement('track'); track.kind='captions';track.srclang='en';track.label='English';track.src=config.videoCaptions;video.append(track);}
-  videoSlot.replaceChildren(video); videoSlot.className='video-ready';
-}
+// Demo videos are now embedded statically in demo.html and index.html (assets/videos/).
+// Hide the decorative play badge once playback starts.
+document.querySelectorAll('[data-video-play]').forEach(wrap => {
+  const video = wrap.querySelector('video');
+  video?.addEventListener('play', () => wrap.classList.add('playing'), { once: true });
+});
 const form=document.querySelector('#quote-form');
 if(form) {
   form.querySelector("[type=submit]").disabled=false;
