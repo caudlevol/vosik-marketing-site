@@ -49,10 +49,26 @@ if(form) {
       const response=await fetch(safeWebUrl(config.quoteEndpoint),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       if(!response.ok) throw new Error('Request was not accepted');
       status.textContent='Thank you. Your quote request has been received. Our sales team will contact you at the email address provided.';form.reset();
+      if(typeof gtag==='function') gtag('event','generate_lead',{method:'quote_form'});
     } catch {status.textContent='Your request could not be sent. Please try again.';}
     finally {submit.disabled=false;submit.textContent='Request My Quote';status.focus();}
   });
 }
+
+/* Analytics: booking clicks + first play per video (self-hosted mp4s are invisible to GA's auto video tracking) */
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('[data-booking]').forEach(function(a){
+    a.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','calendly_click'); });
+  });
+  document.querySelectorAll('video').forEach(function(v){
+    var sent=false;
+    v.addEventListener('play', function(){
+      if(sent||typeof gtag!=='function') return; sent=true;
+      var src=(v.currentSrc||'').split('/').pop()||'video';
+      gtag('event','video_start',{video_title:src});
+    });
+  });
+});
 
 /* Click anywhere on a video to play/pause (Chrome/Edge only toggle via the control bar) */
 document.addEventListener('DOMContentLoaded', function(){
