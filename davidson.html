@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vosik + Davidson Homes</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/VOSIK_Icon_32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+<style>
+  :root { --navy:#081B28; --rust:#AB4928; --cream:#F6EFE9; --slate:#B9C4CC; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--navy); color:#fff; font-family:Inter,system-ui,sans-serif; min-height:100vh; }
+  .wrap { max-width:880px; margin:0 auto; padding:0 20px; }
+  .hero { text-align:center; padding:64px 0 36px; }
+  .lockup { width:min(560px, 86vw); height:auto; display:block; margin:0 auto 34px; }
+  h1 { font-size:clamp(28px,5vw,44px); font-weight:700; letter-spacing:-0.5px; }
+  h1 .accent { color:var(--rust); }
+  .sub { color:var(--slate); font-size:clamp(16px,2.4vw,19px); margin-top:14px; line-height:1.55; }
+  .fade { opacity:0; transform:translateY(10px); animation:in .7s ease forwards; }
+  .d1{animation-delay:.1s} .d2{animation-delay:.3s} .d3{animation-delay:.5s} .d4{animation-delay:.7s} .d5{animation-delay:.9s}
+  @keyframes in { to { opacity:1; transform:none; } }
+  @media (prefers-reduced-motion: reduce) { .fade { animation:none; opacity:1; transform:none; } }
+
+  .keep { background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:28px 26px; margin:26px 0 14px; }
+  .keep h2 { font-size:clamp(19px,3vw,24px); margin-bottom:8px; }
+  .keep p.lead { color:var(--slate); font-size:16px; line-height:1.6; }
+  .points { list-style:none; margin-top:18px; display:grid; gap:12px; }
+  .points li { display:flex; gap:12px; align-items:flex-start; font-size:16.5px; line-height:1.5; }
+  .points .tick { color:var(--rust); font-weight:700; flex:0 0 auto; }
+
+  .video { margin:34px 0 10px; }
+  .video h2 { text-align:center; font-size:clamp(19px,3vw,24px); margin-bottom:6px; }
+  .video p.note { text-align:center; color:var(--slate); font-size:14.5px; margin-bottom:18px; }
+  video { width:100%; border-radius:12px; display:block; background:#000; }
+  .chapters { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
+  .chapters button { background:rgba(255,255,255,.07); color:#fff; border:1px solid rgba(255,255,255,.14); border-radius:999px; padding:8px 14px; font:500 13.5px Inter,sans-serif; cursor:pointer; }
+  .chapters button:hover { background:rgba(255,255,255,.14); }
+
+  .cta { text-align:center; padding:36px 0 20px; }
+  .cta a.book { display:inline-block; background:var(--rust); color:#fff; text-decoration:none; font-weight:600; font-size:17px; padding:15px 34px; border-radius:10px; }
+  .cta a.book:hover { filter:brightness(1.08); }
+  .cta p.alt { margin-top:14px; font-size:14.5px; }
+  .cta p.alt a { color:var(--slate); }
+  footer { text-align:center; color:#5A6B76; font-size:12.5px; padding:26px 0 34px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <img class="lockup fade d1" src="assets/brand/lockup_davidson_white.png" alt="Vosik + Davidson Homes">
+    <h1 class="fade d2">Keep NEWSTAR. Keep Hyphen.<br><span class="accent">We check the money moving through them.</span></h1>
+    <p class="sub fade d3">Your systems record what Davidson pays. Nobody has time to check all of it.<br>That's the job Vosik does.</p>
+  </section>
+
+  <section class="keep fade d4">
+    <h2>Three things your team tracks by hand today</h2>
+    <p class="lead">Vosik reads the purchasing data you already have and flags:</p>
+    <ul class="points">
+      <li><span class="tick">&#10003;</span><span><b>Price increases that don't match the contract</b> &mdash; checked against your agreement and the market, before you pay the new price.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Rebates about to expire unclaimed</b> &mdash; every deadline tracked, with the claim drafted for you.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Change orders billed twice</b> &mdash; duplicate charges and uncollected back charges found in files you already have.</span></li>
+    </ul>
+  </section>
+
+  <section class="video fade d5">
+    <h2>See it work</h2>
+    <p class="note">The full walk-through, or jump to the part your team cares about.</p>
+    <video id="demo" controls preload="none" poster="assets/videos/posters/Vosik_Demo_Full.jpg">
+      <source src="assets/videos/Vosik_Demo_Full.mp4" type="video/mp4">
+    </video>
+    <div class="chapters">
+      <button data-src="assets/videos/Vosik_Demo_2_Price_Letters.mp4">Price letters</button>
+      <button data-src="assets/videos/Vosik_Demo_1_Contracts.mp4">Contracts</button>
+      <button data-src="assets/videos/Vosik_Demo_5_Rebates.mp4">Rebates</button>
+      <button data-src="assets/videos/Vosik_Demo_3_VPOs.mp4">Duplicate VPOs</button>
+      <button data-src="assets/videos/Vosik_Demo_4_Recovery_Tariffs.mp4">Tariffs &amp; recovery</button>
+      <button data-src="assets/videos/Vosik_Demo_Full.mp4">Full demo</button>
+    </div>
+  </section>
+
+  <section class="cta">
+    <a class="book" href="https://vosik.io/b/book" rel="noopener">Book 30 minutes with us</a>
+    <p class="alt">Bring one division's last 90 days &mdash; we'll show you the dollar number.</p>
+  </section>
+
+  <footer>Vosik &middot; Purchasing intelligence to protect profits &middot; vosik.io &middot; Patent pending</footer>
+</div>
+<script>
+  const v = document.getElementById('demo');
+  document.querySelectorAll('.chapters button').forEach(b => {
+    b.addEventListener('click', () => {
+      v.querySelector('source').src = b.dataset.src;
+      v.poster = '';
+      v.load(); v.play();
+      v.scrollIntoView({ behavior:'smooth', block:'center' });
+    });
+  });
+</script>
+</body>
+</html>
