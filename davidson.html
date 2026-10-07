@@ -10,64 +10,70 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
 <style>
-  :root { --navy:#081B28; --rust:#AB4928; --cream:#F6EFE9; --slate:#B9C4CC; }
+  :root { --navy:#081B28; --rust:#AB4928; --cream:#F6EFE9; --ink:#22333E; --mut:#5E6E78; }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--navy); color:#fff; font-family:Inter,system-ui,sans-serif; min-height:100vh; }
-  .wrap { max-width:880px; margin:0 auto; padding:0 20px; }
-  .hero { text-align:center; padding:64px 0 36px; }
-  .lockup { width:min(560px, 86vw); height:auto; display:block; margin:0 auto 34px; }
-  h1 { font-size:clamp(28px,5vw,44px); font-weight:700; letter-spacing:-0.5px; }
+  body { background:#fff; color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+
+  .band { background:var(--navy); padding:26px 0 24px; }
+  .band .lockup { width:min(430px,78vw); height:auto; display:block; margin:0 auto; }
+
+  .hero { text-align:center; padding:40px 0 10px; }
+  h1 { font-size:clamp(26px,4.2vw,38px); font-weight:700; letter-spacing:-0.5px; color:var(--navy); }
   h1 .accent { color:var(--rust); }
-  .sub { color:var(--slate); font-size:clamp(16px,2.4vw,19px); margin-top:14px; line-height:1.55; }
-  .fade { opacity:0; transform:translateY(10px); animation:in .7s ease forwards; }
-  .d1{animation-delay:.1s} .d2{animation-delay:.3s} .d3{animation-delay:.5s} .d4{animation-delay:.7s} .d5{animation-delay:.9s}
-  @keyframes in { to { opacity:1; transform:none; } }
-  @media (prefers-reduced-motion: reduce) { .fade { animation:none; opacity:1; transform:none; } }
+  .sub { color:var(--mut); font-size:clamp(15.5px,2.2vw,18px); margin-top:12px; line-height:1.55; }
 
-  .keep { background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.1); border-radius:14px; padding:28px 26px; margin:26px 0 14px; }
-  .keep h2 { font-size:clamp(19px,3vw,24px); margin-bottom:8px; }
-  .keep p.lead { color:var(--slate); font-size:16px; line-height:1.6; }
-  .points { list-style:none; margin-top:18px; display:grid; gap:12px; }
-  .points li { display:flex; gap:12px; align-items:flex-start; font-size:16.5px; line-height:1.5; }
-  .points .tick { color:var(--rust); font-weight:700; flex:0 0 auto; }
+  .asks { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:30px 0 8px; }
+  @media (max-width:760px) { .asks { grid-template-columns:1fr; } }
+  .ask { background:var(--cream); border:1px solid #E8DCD2; border-radius:12px; padding:20px 18px; }
+  .ask .q { font-size:16.5px; font-weight:700; color:var(--navy); line-height:1.35; }
+  .ask .q::before { content:"?"; display:inline-flex; align-items:center; justify-content:center;
+    width:22px; height:22px; margin-right:9px; border-radius:50%;
+    background:var(--rust); color:#fff; font-size:14px; font-weight:700; }
+  .ask .a { color:var(--mut); font-size:14px; line-height:1.5; margin-top:9px; }
+  .asks-note { text-align:center; color:var(--mut); font-size:14.5px; margin-top:14px; }
+  .asks-note b { color:var(--navy); }
 
-  .video { margin:34px 0 10px; }
-  .video h2 { text-align:center; font-size:clamp(19px,3vw,24px); margin-bottom:6px; }
-  .video p.note { text-align:center; color:var(--slate); font-size:14.5px; margin-bottom:18px; }
+  .video { margin:34px 0 6px; }
+  .video h2 { text-align:center; font-size:clamp(18px,2.8vw,22px); color:var(--navy); margin-bottom:14px; }
   video { width:100%; border-radius:12px; display:block; background:#000; }
-  .chapters { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
-  .chapters button { background:rgba(255,255,255,.07); color:#fff; border:1px solid rgba(255,255,255,.14); border-radius:999px; padding:8px 14px; font:500 13.5px Inter,sans-serif; cursor:pointer; }
-  .chapters button:hover { background:rgba(255,255,255,.14); }
+  .chapters { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:12px; }
+  .chapters button { background:#fff; color:var(--navy); border:1px solid #D8CEC5; border-radius:999px; padding:7px 13px; font:500 13px Inter,sans-serif; cursor:pointer; }
+  .chapters button:hover { border-color:var(--rust); color:var(--rust); }
 
-  .cta { text-align:center; padding:36px 0 20px; }
-  .cta a.book { display:inline-block; background:var(--rust); color:#fff; text-decoration:none; font-weight:600; font-size:17px; padding:15px 34px; border-radius:10px; }
+  .cta { text-align:center; padding:30px 0 16px; }
+  .cta a.book { display:inline-block; background:var(--rust); color:#fff; text-decoration:none; font-weight:600; font-size:17px; padding:14px 32px; border-radius:10px; }
   .cta a.book:hover { filter:brightness(1.08); }
-  .cta p.alt { margin-top:14px; font-size:14.5px; }
-  .cta p.alt a { color:var(--slate); }
-  footer { text-align:center; color:#5A6B76; font-size:12.5px; padding:26px 0 34px; }
+  .cta p.alt { margin-top:11px; font-size:14px; color:var(--mut); }
+  footer { text-align:center; color:#9AA7AF; font-size:12.5px; padding:18px 0 30px; }
 </style>
 </head>
 <body>
+<div class="band"><img class="lockup" src="assets/brand/lockup_davidson_white.png" alt="Vosik + Davidson Homes"></div>
 <div class="wrap">
   <section class="hero">
-    <img class="lockup fade d1" src="assets/brand/lockup_davidson_white.png" alt="Vosik + Davidson Homes">
-    <h1 class="fade d2">Keep NEWSTAR. Keep Hyphen.<br><span class="accent">We check the money moving through them.</span></h1>
-    <p class="sub fade d3">Your systems record what Davidson pays. Nobody has time to check all of it.<br>That's the job Vosik does.</p>
+    <h1>Keep NEWSTAR. Keep Hyphen.<br><span class="accent">Who checks the money moving through them?</span></h1>
+    <p class="sub">Your systems record what Davidson pays. Checking all of it is a full-time job nobody has.<br>That's the job Vosik does.</p>
   </section>
 
-  <section class="keep fade d4">
-    <h2>Three things your team tracks by hand today</h2>
-    <p class="lead">Vosik reads the purchasing data you already have and flags:</p>
-    <ul class="points">
-      <li><span class="tick">&#10003;</span><span><b>Price increases that don't match the contract</b> &mdash; checked against your agreement and the market, before you pay the new price.</span></li>
-      <li><span class="tick">&#10003;</span><span><b>Rebates about to expire unclaimed</b> &mdash; every deadline tracked, with the claim drafted for you.</span></li>
-      <li><span class="tick">&#10003;</span><span><b>Change orders billed twice</b> &mdash; duplicate charges and uncollected back charges found in files you already have.</span></li>
-    </ul>
+  <section class="asks">
+    <div class="ask">
+      <div class="q">Did that price increase match the contract?</div>
+      <div class="a">Every supplier increase, checked against your agreement and the market — before you pay it.</div>
+    </div>
+    <div class="ask">
+      <div class="q">Is a rebate expiring unclaimed this quarter?</div>
+      <div class="a">Every deadline tracked, with the claim already drafted for you.</div>
+    </div>
+    <div class="ask">
+      <div class="q">Was a change order billed twice?</div>
+      <div class="a">Duplicates and uncollected back charges, found in files you already have.</div>
+    </div>
   </section>
+  <p class="asks-note">If you can't answer all three today, <b>that's exactly what Vosik answers</b> — from the purchasing data you already export.</p>
 
-  <section class="video fade d5">
-    <h2>See it work</h2>
-    <p class="note">The full walk-through, or jump to the part your team cares about.</p>
+  <section class="video">
+    <h2>See it work — or jump to the part your team cares about</h2>
     <video id="demo" controls preload="none" poster="assets/videos/posters/Vosik_Demo_Full.jpg">
       <source src="assets/videos/Vosik_Demo_Full.mp4" type="video/mp4">
     </video>
