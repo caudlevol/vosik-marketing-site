@@ -23,6 +23,11 @@
   h1 .accent { color:var(--rust); }
   .sub { color:var(--mut); font-size:clamp(15.5px,2.2vw,18px); margin-top:12px; line-height:1.55; }
 
+  .connect { margin:22px auto 0; max-width:720px; background:var(--cream); border:1px solid #E8DCD2;
+    border-radius:999px; padding:12px 26px; text-align:center; font-size:15px; line-height:1.5; }
+  .connect b { color:var(--rust); }
+  .connect span { color:var(--navy); font-weight:600; }
+  @media (max-width:760px) { .connect { border-radius:14px; } }
   .asks { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:30px 0 8px; }
   @media (max-width:760px) { .asks { grid-template-columns:1fr; } }
   .ask { background:var(--cream); border:1px solid #E8DCD2; border-radius:12px; padding:20px 18px; }
@@ -56,6 +61,8 @@
     <p class="sub">Growing fast means buying fast &mdash; and every unchecked increase compounds across every home you close.<br>Vosik checks every letter, cap, and rebate against real market data, and hands your team its week back.</p>
   </section>
 
+  <p class="connect"><b>Export &rarr; Drop it in &rarr; Done.</b> <span>Vosik adapts to MarkSystems &mdash; never the other way around.</span> Your numbers, live the same day.</p>
+
   <section class="asks">
     <div class="ask">
       <div class="q">A supplier says +7%. The market says +0.4%. Who catches the difference?</div>
@@ -70,7 +77,7 @@
       <div class="a">Duplicates and uncollected back charges, found in files you already have.</div>
     </div>
   </section>
-  <p class="asks-note"><b>No re-platforming.</b> Vosik works from the exports MarkSystems already produces &mdash; drop them in, see your numbers the same day.</p>
+  <p class="asks-note">If you can't answer all three today, <b>that's exactly the job Vosik does</b> &mdash; from the exports you already have.</p>
 
   <section class="video">
     <h2>See it work — or jump to the part your team cares about</h2>
