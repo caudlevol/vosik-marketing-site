@@ -15,8 +15,12 @@
   body { background:#fff; color:var(--ink); font-family:Inter,system-ui,sans-serif; }
   .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
 
-  .band { background:var(--navy); padding:26px 0 24px; }
-  .band .lockup { width:min(430px,78vw); height:auto; display:block; margin:0 auto; }
+  .band { background:#fff; border-bottom:1px solid #E7E2DC; padding:12px 0 10px; position:sticky; top:0; z-index:50; }
+  .band .inner { position:relative; max-width:960px; margin:0 auto; padding:0 20px; }
+  .band .lockup { width:min(330px,64vw); height:auto; display:block; margin:0 auto; }
+  .band a.site { position:absolute; right:20px; top:50%; transform:translateY(-50%); background:var(--rust); color:#fff; text-decoration:none; font-weight:700; font-size:14px; padding:9px 16px; border-radius:9px; white-space:nowrap; }
+  .band a.site:hover { filter:brightness(1.08); }
+  @media (max-width:700px) { .band a.site { font-size:12.5px; padding:7px 11px; right:12px; } .band .lockup { margin:0 0 0 12px; width:min(250px,52vw); } }
 
   .hero { text-align:center; padding:40px 0 10px; }
   h1 { font-size:clamp(26px,4.2vw,38px); font-weight:700; letter-spacing:-0.5px; color:var(--navy); }
@@ -54,7 +58,7 @@
 </style>
 </head>
 <body>
-<div class="band"><img class="lockup" src="assets/brand/lockup_esperanza_white.png" alt="Vosik + Esperanza Homes"></div>
+<div class="band"><div class="inner"><img class="lockup" src="assets/brand/lockup_esperanza_dark.png" alt="Vosik + Esperanza Homes"><a class="site" href="https://vosik.io">vosik.io &rarr;</a></div></div>
 <div class="wrap">
   <section class="hero">
     <h1>MarkSystems doesn't check your suppliers' math.<br><span class="accent">Your team does &mdash; by hand. Take that time back.</span></h1>
