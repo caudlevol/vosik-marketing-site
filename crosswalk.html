@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vosik Item Crosswalk</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/VOSIK_Icon_32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+<style>
+  :root { --navy:#081B28; --rust:#AB4928; --cream:#F6EFE9; --ink:#22333E; --mut:#5E6E78; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#fff; color:var(--ink); font-family:Inter,system-ui,sans-serif; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+
+  .band { background:#fff; border-bottom:1px solid #E7E2DC; padding:12px 0 10px; position:sticky; top:0; z-index:50; }
+  .band .inner { position:relative; max-width:960px; margin:0 auto; padding:0 20px; }
+  .band .lockup { width:min(190px,44vw); height:auto; display:block; margin:0 auto; }
+  .band a.site { position:absolute; right:20px; top:50%; transform:translateY(-50%); background:var(--rust); color:#fff; text-decoration:none; font-weight:700; font-size:14px; padding:9px 16px; border-radius:9px; white-space:nowrap; }
+  .band a.site:hover { filter:brightness(1.08); }
+  @media (max-width:700px) { .band a.site { font-size:12.5px; padding:7px 11px; right:12px; } .band .lockup { margin:0 0 0 12px; width:min(150px,40vw); } }
+
+  .hero { text-align:center; padding:40px 0 10px; }
+  h1 { font-size:clamp(26px,4.2vw,38px); font-weight:700; letter-spacing:-0.5px; color:var(--navy); }
+  h1 .accent { color:var(--rust); }
+  .sub { color:var(--mut); font-size:clamp(15.5px,2.2vw,18px); margin-top:12px; line-height:1.55; }
+
+  .connect { margin:22px auto 0; max-width:720px; background:var(--cream); border:1px solid #E8DCD2;
+    border-radius:999px; padding:12px 26px; text-align:center; font-size:15px; line-height:1.5; }
+  .connect b { color:var(--rust); }
+  .connect span { color:var(--navy); font-weight:600; }
+  @media (max-width:760px) { .connect { border-radius:14px; } }
+
+  .video { margin:30px 0 6px; }
+  video { width:100%; border-radius:12px; display:block; background:#000; }
+
+  .asks { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:30px 0 8px; }
+  @media (max-width:760px) { .asks { grid-template-columns:1fr; } }
+  .ask { background:var(--cream); border:1px solid #E8DCD2; border-radius:12px; padding:20px 18px; }
+  .ask .q { font-size:16.5px; font-weight:700; color:var(--navy); line-height:1.35; }
+  .ask .a { color:var(--mut); font-size:14px; line-height:1.5; margin-top:9px; }
+  .ask .a b { color:var(--navy); }
+
+  .cta { text-align:center; padding:30px 0 16px; }
+  .cta a.book { display:inline-block; background:var(--rust); color:#fff; text-decoration:none; font-weight:600; font-size:17px; padding:14px 32px; border-radius:10px; }
+  .cta a.book:hover { filter:brightness(1.08); }
+  .cta p.alt { margin-top:11px; font-size:14px; color:var(--mut); }
+  footer { text-align:center; color:#9AA7AF; font-size:12.5px; padding:18px 0 30px; }
+</style>
+</head>
+<body>
+<div class="band"><div class="inner"><img class="lockup" src="assets/brand/VOSIK_Logo_Primary_2C_email400.png" alt="Vosik"><a class="site" href="https://vosik.io">vosik.io &rarr;</a></div></div>
+<div class="wrap">
+  <section class="hero">
+    <h1>Two companies. Two part numbers.<br><span class="accent">One parts list.</span></h1>
+    <p class="sub"><b>How the sausage gets made: five minutes, start to finish.</b><br>Real file shapes, fictional companies. Every number on screen is live product, not slides.</p>
+  </section>
+
+  <section class="video">
+    <video controls preload="metadata" poster="" src="assets/videos/Vosik_Crosswalk_Demo.mp4"></video>
+  </section>
+
+  <section class="asks">
+    <div class="ask">
+      <div class="q">Same item, two systems, two spellings. Who reconciles it?</div>
+      <div class="a"><b>Vosik does, with its work shown.</b> Every match carries its evidence. Species, grade, and size differences never bridge on their own.</div>
+    </div>
+    <div class="ask">
+      <div class="q">A box of 25 on one side, each on the other?</div>
+      <div class="a"><b>Your own parts file settles it.</b> Vosik reads the pack quantity and does the math in the open.</div>
+    </div>
+    <div class="ask">
+      <div class="q">What happens to the monthly database true-up?</div>
+      <div class="a"><b>It becomes a download.</b> Every item, both part numbers, who confirmed it and when. Answers are kept forever.</div>
+    </div>
+  </section>
+
+  <p class="connect"><b>Export &rarr; Drop it in &rarr; Done.</b> <span>Both systems, exactly as they are.</span> Send one real export and week one it speaks your language.</p>
+
+  <section class="cta">
+    <a class="book" href="https://calendly.com/vosik/30min">Book a working session</a>
+    <p class="alt">Or reply to the email that brought you here.</p>
+  </section>
+</div>
+<footer>&copy; 2026 Vosik &middot; Patent pending</footer>
+</body>
+</html>
