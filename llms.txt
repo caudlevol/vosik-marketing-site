@@ -1,0 +1,22 @@
+# Vosik
+
+> Vosik is purchasing analysis software for large homebuilders, typically those closing 500 or more homes a year. It is decision support that works alongside a builder's ERP: it reads supplier contracts, rebate agreements, price increase letters and bids, puts every division on one item list, and keeps money found, money asked for and money confirmed as separate numbers.
+
+## Product
+
+- [How Vosik works](https://vosik.io/how-it-works.html): How Vosik supports purchasing teams at multi-division homebuilders.
+- [Demo](https://vosik.io/demo.html): Product demo and free 30-day trial.
+- [About](https://vosik.io/about.html): Founders Hunter Caudle (Co-Founder and President) and Joe Fox (Co-Founder and CEO).
+
+## Resources
+
+- [How Should a Large Homebuilder Negotiate With Building Material Suppliers?](https://vosik.io/resources/negotiate-with-building-material-suppliers/): What to prepare, what to negotiate besides price, and how to compare bids on net cost.
+- [How Does a Homebuilder Run a Spend Analysis?](https://vosik.io/resources/homebuilder-spend-analysis/): Data, classification and spend cube for multi-division builders.
+- [Purchasing KPIs for Homebuilders](https://vosik.io/resources/homebuilder-purchasing-kpis/): The purchasing metrics a homebuilder CFO should track.
+- [Price Increase Notice Periods](https://vosik.io/resources/price-increase-notice-period/): Notice, price protection and cap terms for homebuilder supplier agreements.
+- [Cost Avoidance vs Cost Savings](https://vosik.io/resources/cost-avoidance-vs-cost-savings/): How homebuilders should report purchasing results to finance.
+- [How Should a Homebuilder Respond to a Supplier Price Increase Letter?](https://vosik.io/resources/supplier-price-increase-letter/): What to check in the agreement, what to ask the supplier for, and how to respond in writing.
+
+## Optional
+
+- [Press](https://vosik.io/press/): Vosik announcements.

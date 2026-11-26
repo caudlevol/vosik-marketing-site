@@ -57,8 +57,10 @@ if(form) {
 
 /* Analytics: booking clicks + first play per video (self-hosted mp4s are invisible to GA's auto video tracking) */
 document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('[data-booking]').forEach(function(a){
-    a.addEventListener('click', function(){ if(typeof gtag==='function') gtag('event','calendly_click'); });
+  /* Every demo booking link on every page (articles included), not only the ones tagged data-booking. */
+  document.addEventListener('click', function(e){
+    var a=e.target.closest&&e.target.closest('a[data-booking], a[href*="leadconnectorhq.com/widget/bookings"]');
+    if(a&&typeof gtag==='function') gtag('event','calendly_click',{link_url:a.href,page_path:location.pathname});
   });
   document.querySelectorAll('video').forEach(function(v){
     var sent=false;
